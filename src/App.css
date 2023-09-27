@@ -2,7 +2,6 @@
   margin: 1rem auto auto;
   max-width: 768px; 
   padding: 1.25rem 2rem; 
-  background: linear-gradient(to bottom right, #00a9bf, #181287);
 }
 
 .title{
@@ -24,6 +23,10 @@
 
 .icon:hover{
   transform: scale(1.25);
+}
+
+.degree:hover{
+  transform: scale(1.25); 
 }
 
 .converter{
@@ -68,4 +71,8 @@
 
 .forecast-icon{
   width: 40px;
+}
+
+hr{
+  border: 2px solid white;
 }

@@ -40,20 +40,22 @@ const formatCurrentWeather = (data) => {
         sunset,
         details,
         icon,
-        speed,
+        speed
     };
 };
 
 const formatForecastWeather = (data) => {
-    let { timezone, daily } = data;
-    daily = daily?.slice().map((d) => {
+    let { timezone, list } = data;
+
+    const daily = list
+    .filter((item) => item.dt_txt.includes("12:00:00"))
+    .map((item) => {
         return {
-            title: formatToLocalTime(d.dt, timezone, "ccc"),
-            temp: d.temp.day,
-            icon: d.weather[0].icon,
+            title: formatToLocalTime(item.dt, timezone, "ccc"),
+            temp: item.main.temp,
+            icon: item.weather[0].icon,
         };
     });
-
     return { timezone, daily };
 };
 
